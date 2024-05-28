@@ -13,7 +13,7 @@ fn main() {
     let len = (end - start).num_days() as u64;
 
     let pb = ProgressBar::new(len);
-    pb.set_prefix(format!("{} is {:.0}% complete", year, (pos as f64 / len as f64) * 100.0));
+    pb.set_prefix(format!("{} is {:.2}% complete", year, (pos as f64 / len as f64) * 100.0));
     let remaining = format!("{} days remaining", len - pos);
     pb.set_style(ProgressStyle::with_template(&format!("{{prefix:.bold}} {{bar:40.blue}} {{pos}}/{{len}} [{}]", remaining))
         .unwrap()
